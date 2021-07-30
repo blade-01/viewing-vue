@@ -11,40 +11,70 @@
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
 import Header from "./components/Header.vue";
 
 export default {
   name: "App",
   components: { Header },
-  data() {
-    return {
-      title: "Blade",
-      lists: [
-        {
-          id: 1,
-          author: "Blade",
-          book: "Butterfly Jelly",
-          content: "lorem ipsum dorlo kosiy",
-          fav: "#dddddd",
-        },
-        {
-          id: 2,
-          author: "Bladeress",
-          book: "Fish Jelly",
-          content: "lorem ipsum dorlo kosiy",
-          fav: "#ffffff",
-        },
-        {
-          id: 3,
-          author: "Bladant",
-          book: "Butterfly Jelly",
-          content: "lorem ipsum dorlo kosiy",
-          fav: "#dddddd",
-        },
-      ],
-    };
+  // Composition API
+  setup() {
+    const title = ref("Blade");
+    const lists = ref([
+      {
+        id: 1,
+        author: "Blade",
+        book: "Butterfly Jelly",
+        content: "lorem ipsum dorlo kosiy",
+        fav: "#dddddd",
+      },
+      {
+        id: 2,
+        author: "Bladeress",
+        book: "Fish Jelly",
+        content: "lorem ipsum dorlo kosiy",
+        fav: "#ffffff",
+      },
+      {
+        id: 3,
+        author: "Bladant",
+        book: "Butterfly Jelly",
+        content: "lorem ipsum dorlo kosiy",
+        fav: "#dddddd",
+      },
+    ]);
+    return { title, lists };
   },
-  methods: {},
+  // Options API
+  // data() {
+  //   return {
+  //     title: "Blade",
+  // lists: [
+  //   {
+  //     id: 1,
+  //     author: "Blade",
+  //     book: "Butterfly Jelly",
+  //     content: "lorem ipsum dorlo kosiy",
+  //     fav: "#dddddd",
+  //   },
+  //   {
+  //     id: 2,
+  //     author: "Bladeress",
+  //     book: "Fish Jelly",
+  //     content: "lorem ipsum dorlo kosiy",
+  //     fav: "#ffffff",
+  //   },
+  //   {
+  //     id: 3,
+  //     author: "Bladant",
+  //     book: "Butterfly Jelly",
+  //     content: "lorem ipsum dorlo kosiy",
+  //     fav: "#dddddd",
+  //   },
+  // ],
+  //   };
+  // },
+  // methods: {},
 };
 </script>
 
