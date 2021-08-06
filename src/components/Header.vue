@@ -42,6 +42,7 @@
   </div>
 </template>
 <script>
+import TestMixin from "@/mixins/TestMixin";
 export default {
   name: "Header",
   props: ["lists", "title"],
@@ -51,13 +52,11 @@ export default {
     };
   },
   methods: {
-    openNav() {
-      this.open = !this.open;
-    },
     changeBg() {
       this.$refs.list.classList.toggle("bg");
     },
   },
+  mixins: [TestMixin],
 };
 </script>
 <style scoped>
